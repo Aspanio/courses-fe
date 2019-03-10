@@ -1,11 +1,13 @@
 import React from 'react';
 import HeaderNav from '../../components/HeaderNav';
+import MainScreen from '../../components/MainScreen';
 import './styles.scss';
 
 export default function () {
   return (
-    <div className="wrapper">
+    <div>
       <HeaderNav />
+      <MainScreen />
     </div>
   );
 }
