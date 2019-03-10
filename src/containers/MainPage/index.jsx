@@ -1,7 +1,11 @@
 import React from 'react';
+import HeaderNav from '../../components/HeaderNav';
+import './styles.scss';
 
 export default function () {
   return (
-    <h1>Initial app</h1>
+    <div className="wrapper">
+      <HeaderNav />
+    </div>
   );
 }
