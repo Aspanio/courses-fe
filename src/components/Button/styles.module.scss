@@ -1,0 +1,17 @@
+@import '../variables.scss';
+
+.button {
+    min-width: 100px;
+    height: 44px;
+    padding: 12px 32px;
+    border: 2px solid #fff;
+    text-decoration: none;
+    color: #fff;
+    font-size: $fz-s;
+    font-weight: bold;
+    border-radius: 2px;
+
+    &:hover {
+        border-color: #F1B008;
+    }
+}
