@@ -1,0 +1,39 @@
+@import '../variables';
+
+.navInfoContainer {
+    max-width: 1126px;
+    margin: 0 auto;
+    height: 64px;
+    
+
+    div {
+        display: flex;
+        font-display: row;
+        align-items: center;
+        width: 280px;
+        justify-content: space-between;
+
+        h4{
+            color: #979FAD;
+            font-size: $fz-s;
+
+            &:last-child{
+                color: #000;
+            }
+
+            a{
+                text-decoration: none;
+                color: inherit;
+                
+
+                &:hover{ color: #000; }
+            }
+        }
+
+        .line{
+            width: 22px;
+            height: 1px;
+            background-color: #979FAD;
+        }
+    }
+}
