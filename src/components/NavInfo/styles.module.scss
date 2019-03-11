@@ -3,8 +3,6 @@
 .navInfoContainer {
     max-width: 1126px;
     margin: 0 auto;
-    height: 64px;
-    
 
     div {
         display: flex;
@@ -12,6 +10,7 @@
         align-items: center;
         width: 280px;
         justify-content: space-between;
+        height: 64px;
 
         h4{
             color: #979FAD;
