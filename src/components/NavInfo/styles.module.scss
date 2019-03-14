@@ -5,16 +5,23 @@
     margin: 0 auto;
 
     div {
-        display: flex;
-        font-display: row;
+        display: inline-block;
         align-items: center;
-        width: 280px;
-        justify-content: space-between;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-column-gap: 5px;
         height: 64px;
 
         h4{
+            margin-top: 23px;
+            display: inline-block;
             color: #979FAD;
             font-size: $fz-s;
+            padding-left: 12px;
+            padding-right: 12px;
+
+            &:first-child {
+                padding-left: 0;
+            }
 
             &:last-child{
                 color: #000;
@@ -30,9 +37,11 @@
         }
 
         .line{
+            display: inline-block;
             width: 22px;
             height: 1px;
             background-color: #979FAD;
+            margin-bottom: 2px;
         }
     }
 }

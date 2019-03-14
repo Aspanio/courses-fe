@@ -1,8 +1,12 @@
 import React from 'react';
-import MainScreen from '../../components/MainScreen';
+import ModuleScreen from '../../components/ModuleScreen';
+import NavInfo from '../../components/NavInfo';
 
 export default function ModulePage() {
   return (
-    <MainScreen />
+    <div>
+      <ModuleScreen />
+      <NavInfo value2="Академия родительского мастерства" value3="Модуль 12" />
+    </div>
   );
 }

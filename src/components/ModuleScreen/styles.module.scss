@@ -1,0 +1,82 @@
+@import '../variables.scss';
+
+.moduleScreenBg {
+    background-color: #5EC8E4;
+    background-image: url('./kid.png');
+    background-size: cover;
+    padding: 10px 0;
+
+    .moduleScreenContainer {
+        max-width: 1126px;
+        margin: 0 auto;
+        max-height: 512px;  
+
+        .content {
+            width: 100%;
+            max-width: 487px;
+            //padding-top: 112px;
+
+            h2 {
+                color: #fff;
+                margin-top: 26px;
+                font-size: 24px;
+                font-family: 'Proxima Nova Light', serif;
+            }
+
+            .moduleName{
+                margin-top: 110px;
+                color: #fff;
+                font-family: 'Intro Bold', sans-serif;
+                background-color: $dark-blue;
+                padding: 15px;
+                font-size: 44px;
+                text-transform: uppercase;
+                position: relative;
+                &:before {
+                    content: '';
+                    position: absolute;
+                    width: 700px;
+                    left: -700px;
+                    top: 0;
+                    height: 80px;
+                    background-color: $dark-blue;
+                }
+            }
+            p {
+                font-family: 'Proxima Nova Light', sans-serif;
+                line-height: 27px;
+                margin-bottom: 74px;
+            }
+
+            .themesInfo {
+                display: flex;
+                justify-content: space-between;
+                flex-direction: row;
+
+                .themes, .themesDone {
+                    max-width: 120px;
+                    display: flex;
+                    flex-direction: row;
+
+                    h1 {
+                        color: #000;
+                        font-size: 38px;
+                        font-family: 'Proxima Nova Light', sans-serif;
+                        margin-top: 8px;
+                        margin-right: 7px;
+                    }
+
+                    p {
+                        font-size: 14px;
+                        line-height: 15px;
+                        font-family: 'Proxima Nova Light', sans-serif;
+                    }
+                }
+
+                .themesDone {
+                    margin-right: 17px;
+                }
+            }
+        }
+    }
+}
