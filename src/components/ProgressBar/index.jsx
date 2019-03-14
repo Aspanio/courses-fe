@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import styles from './styles.module.scss';
 
 class ProgressBar extends Component {
@@ -8,12 +9,22 @@ class ProgressBar extends Component {
   }
 
   render() {
+    const { vert } = this.props;
+
     return (
-      <div className={styles.parentContainer}>
-        <div className={styles.progress} />
+      <div className={vert ? styles.verContainer : styles.parentContainer}>
+        <div className={vert ? styles.verProgress : styles.progress} />
       </div>
     );
   }
 }
+
+ProgressBar.defaultProps = {
+  vert: false,
+};
+
+ProgressBar.propTypes = {
+  vert: PropTypes.bool,
+};
 
 export default ProgressBar;

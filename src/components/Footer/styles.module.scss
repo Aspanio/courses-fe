@@ -1,0 +1,47 @@
+@import '../variables.scss';
+
+footer {
+    background-color: #0099DD;
+    border-bottom: 47px solid $dark-blue;
+    
+    .content {
+        max-width: 1126px;
+        margin: 0 auto;
+        padding: 27px 0 47px 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        //justify-content: space-between;
+
+        .line {
+            height: 3px;
+            width: 38px;
+            background-color: #fff;
+            margin-top: 12px;
+            margin-bottom: 25px;
+        }
+
+        h1{
+            color: #fff;
+            font-size: 24px;
+            font-family: 'Proxima Nova Light', sans-serif;
+        }
+        a {
+            color: #fff;
+            text-decoration: none;
+
+            &:hover {
+                padding-left: 2px;
+            }
+        }
+        ul {
+            list-style-type: none;
+        }
+
+        li{
+            font-size: 16px;
+            font-family: 'Proxima Nova Liqht', sans-serif;
+            margin-left: -40px;
+            margin-bottom: 10px;
+        }
+    }
+}
