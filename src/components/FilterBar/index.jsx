@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactDropdown from 'react-dropdown';
+// import { connect } from 'react-redux';
 
 import 'react-dropdown/style.css';
 import styles from './styles.module.scss';

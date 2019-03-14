@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import ReactSVG from 'react-svg';
 import styles from './styles.module.scss';
 import ProgressBar from '../ProgressBar';
@@ -18,7 +19,10 @@ class ThemeBlock extends Component {
       text,
       date,
       number,
+      percent,
     } = this.props;
+
+    const percentage = `${percent()}%`;
 
     return (
       <div className={styles.block}>
@@ -30,12 +34,18 @@ class ThemeBlock extends Component {
           <h2>Будет доступно <span>{date}</span></h2>
         </div>
         <div className={styles.bar}>
-          <h6>60%</h6>
+          <h6>{percentage}</h6>
           <ProgressBar vert />
         </div>
       </div>
     );
   }
+}
+
+function mapStateToProps(state) {
+  return {
+    percent: state.fetchProgress.progress,
+  };
 }
 
 ThemeBlock.propTypes = {
@@ -44,6 +54,7 @@ ThemeBlock.propTypes = {
   text: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
   number: PropTypes.string.isRequired,
+  percent: PropTypes.number.isRequired,
 };
 
-export default ThemeBlock;
+export default connect(mapStateToProps)(ThemeBlock);

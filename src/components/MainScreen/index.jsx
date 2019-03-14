@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import Button from '../Button';
 import ProgressBar from '../ProgressBar';
 import karpachoff from './karpachoff.png';
@@ -44,14 +45,16 @@ class MainScreen extends Component {
   }
 }
 
-export default MainScreen;
-
 MainScreen.propTypes = {
-  themesCount: PropTypes.number,
-  themesDone: PropTypes.number,
+  themesCount: PropTypes.number.isRequired,
+  themesDone: PropTypes.number.isRequired,
 };
 
-MainScreen.defaultProps = {
-  themesCount: 10,
-  themesDone: 6,
-};
+function mapStateToProps(state) {
+  return {
+    themesCount: state.fetchProgress.themes,
+    themesDone: state.fetchProgress.themesDone,
+  };
+}
+
+export default connect(mapStateToProps)(MainScreen);
