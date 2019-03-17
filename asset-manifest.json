@@ -1,0 +1,23 @@
+{
+  "main.css": "/build/build/static/css/main.62504266.chunk.css",
+  "main.js": "/build/build/static/js/main.9c75eff4.chunk.js",
+  "main.js.map": "/build/build/static/js/main.9c75eff4.chunk.js.map",
+  "runtime~main.js": "/build/build/static/js/runtime~main.e1a63337.js",
+  "runtime~main.js.map": "/build/build/static/js/runtime~main.e1a63337.js.map",
+  "static/css/2.7b2cedcc.chunk.css": "/build/build/static/css/2.7b2cedcc.chunk.css",
+  "static/js/2.ee0a3dce.chunk.js": "/build/build/static/js/2.ee0a3dce.chunk.js",
+  "static/js/2.ee0a3dce.chunk.js.map": "/build/build/static/js/2.ee0a3dce.chunk.js.map",
+  "index.html": "/build/build/index.html",
+  "precache-manifest.9a7aa74e36e1cb62dd3dbd3a32efeae7.js": "/build/build/precache-manifest.9a7aa74e36e1cb62dd3dbd3a32efeae7.js",
+  "service-worker.js": "/build/build/service-worker.js",
+  "static/css/2.7b2cedcc.chunk.css.map": "/build/build/static/css/2.7b2cedcc.chunk.css.map",
+  "static/css/main.62504266.chunk.css.map": "/build/build/static/css/main.62504266.chunk.css.map",
+  "static/media/index.css": "/build/build/static/media/Proxima Nova Regular.410504d4.otf",
+  "static/media/arrow.svg": "/build/build/static/media/arrow.8a9b0b7c.svg",
+  "static/media/baby.svg": "/build/build/static/media/baby.65da7f68.svg",
+  "static/media/icon.svg": "/build/build/static/media/icon.a2590661.svg",
+  "static/media/karpachoff.png": "/build/build/static/media/karpachoff.41158ffa.png",
+  "static/media/styles.module.scss": "/build/build/static/media/kid.dd6c52e2.png",
+  "static/media/login.svg": "/build/build/static/media/login.731ad593.svg",
+  "static/media/logo.svg": "/build/build/static/media/logo.1d58b29e.svg"
+}
