@@ -1,6 +1,6 @@
 const initialState = {
   themes: 10,
-  themesDone: 0,
+  themesDone: 9,
 };
 
 initialState.progress = function () {

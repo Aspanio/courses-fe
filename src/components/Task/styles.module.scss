@@ -1,0 +1,24 @@
+@import '../variables.scss';
+
+.task {
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .content {
+
+        display: flex;
+        align-items: center;
+        .number {
+            margin: 24px;
+            font-size: 16px;
+            color: #222B3A;
+            background-color: #f3f3f3;
+            border-radius: 3px;
+            padding: 4px 0;
+            width: 25px;
+            text-align: center;
+        }
+    }
+}
