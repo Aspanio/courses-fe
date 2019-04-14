@@ -1,0 +1,13 @@
+@import '../variables.scss';
+
+.header {
+    margin-top: 30px;
+    color: #027eb4;
+    &[danger='1'] { color: $dark-orange }
+    font-size: 24px;
+    font-family: "Proxima Nova Light", sans-serif;
+}
+
+.danger {
+    padding-bottom: 56px;
+}

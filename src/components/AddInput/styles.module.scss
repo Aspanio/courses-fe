@@ -1,0 +1,27 @@
+@import '../variables.scss';
+.button {
+    font-size: 14px;
+    height: 24px;
+    width: 24px;
+    color: #fafafa;
+    background-color: $blue;
+    border-radius: 50%;
+    position: relative;
+    transition: .5s all;
+    text-align: center;
+
+    &:hover::after {
+        position: absolute;
+        top: 8px;
+        left: 23px;
+        padding: 5px;
+        content: 'Добавить еще поле/блок';
+        display: block;
+        color: $black;
+        border: 1px solid $blue;
+        z-index: 2;
+        background-color: #fff;
+        width: 180px;
+        border-radius: 5px;
+    }
+}

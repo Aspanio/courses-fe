@@ -5,9 +5,9 @@ footer {
     border-bottom: 47px solid $dark-blue;
     
     .content {
-        max-width: 1126px;
+        max-width: 1172px; 
         margin: 0 auto;
-        padding: 27px 0 47px 0;
+        padding: 27px 18px 47px 18px;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
         //justify-content: space-between;

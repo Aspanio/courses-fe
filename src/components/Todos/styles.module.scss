@@ -1,0 +1,9 @@
+.todoContainer {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 30px;
+
+    .todoItem {
+        margin: 30px 0;
+    }
+}

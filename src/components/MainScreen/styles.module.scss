@@ -33,7 +33,8 @@
     }
 
     .container{
-        max-width: 1126px;
+        max-width: 1172px;
+        padding: 0 18px;
         margin: 0 auto;
         display: grid;
         grid-template-columns: 0.6fr 0.4fr;
@@ -87,6 +88,12 @@
                     line-height: 15px;
                     color: #fff;
                 }
+            }
+            &:after {
+                content: url('./karpachoff.png');
+                position: absolute;
+                right: 100px;
+                transform: translateY(-88%);
             }
         }
 

@@ -1,16 +1,17 @@
 import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
 // import createBrowserHistory from 'history/createBrowserHistory';
-import rootReducer from '../reducers';
+import store from '../store';
 import HeaderNav from '../components/HeaderNav';
 import MainPage from '../containers/MainPage';
 import ModulePage from '../containers/ModulePage';
 import Footer from '../components/Footer';
+import Login from '../containers/Login';
+import User from '../containers/UserPage';
+import Admin from '../containers/Admin';
 
 // const history = createBrowserHistory();
-const store = createStore(rootReducer);
 
 export default function () {
   return (
@@ -18,8 +19,11 @@ export default function () {
       <BrowserRouter>
         <div>
           <HeaderNav />
-          <Route exact path="/module" component={ModulePage} />
-          <Route exact path="/" component={MainPage} />
+          <Route path="/module" exact component={ModulePage} />
+          <Route path="/" exact component={MainPage} />
+          <Route path="/login" exact component={Login} />
+          <Route path="/user" exact component={User} />
+          <Route path="/admin" exact component={Admin} />
           <Footer />
         </div>
       </BrowserRouter>

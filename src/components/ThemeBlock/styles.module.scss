@@ -9,6 +9,11 @@
     box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.03);
     padding: 10px;
     position: relative;
+    transition: all .4s;
+
+    &:hover {
+        box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
+    }
 
     .number {
         color: $grey;

@@ -1,32 +1,38 @@
-.slickContainer {
-    max-width: 1126px;
-    margin: 0 auto;
-
-    .blockSlick {
-        display: flex;  
-        flex-direction: row;
-        align-items: center;
-
-        .lineBefore {
-            height: 2px;
-            width: 22px;
-            margin-right: 12px;
-            background-color: #000;
-        }
-
-        h1 {
-            color: #222B3A;
-            font-family: 'Proxima Nova Light', sans-serif;
-            font-size: 32px;
-            white-space: nowrap;
-
-        }
-
-        .line{
-            height: 2px;
-            background-color: #f1f1f1;
-            width: 100%;
-            margin: 0 12px;
+.bgc {
+    
+    .slickContainer {
+        max-width: 1172px;
+        padding: 0 18px;
+            
+        margin: 0 auto;
+    
+    
+        .blockSlick {
+            display: flex;  
+            flex-direction: row;
+            align-items: center;
+    
+            .lineBefore {
+                height: 2px;
+                width: 22px;
+                margin-right: 12px;
+                background-color: #000;
+            }
+    
+            h1 {
+                color: #222B3A;
+                font-family: 'Proxima Nova Light', sans-serif;
+                font-size: 32px;
+                white-space: nowrap;
+    
+            }
+    
+            .line{
+                height: 2px;
+                background-color: #f1f1f1;
+                width: 100%;
+                margin: 0 12px;
+            }
         }
     }
 }

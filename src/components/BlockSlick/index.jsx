@@ -32,27 +32,29 @@ export default class BlockSlick extends Component {
   }
 
   render() {
-    const { header, element } = this.props;
+    const { header, element, style } = this.props;
     const { open, upOrDown } = this.state;
     return (
-      <div className={styles.slickContainer}>
-        <div className={styles.blockSlick}>
-          <div className={styles.lineBefore} />
-          <h1>{header}</h1>
-          <div className={styles.line} />
-          <ReactSVG
-            src={arrowSvg}
-            element="span"
-            onClick={this.openClose}
-            svgStyle={{
-              transform: upOrDown,
-              cursor: 'pointer',
-              padding: '8px',
-            }}
-          />
-        </div>
-        <div style={open ? { display: 'block' } : { display: 'none' }}>
-          {element}
+      <div className={styles.bgc} style={style}>
+        <div className={styles.slickContainer} style={style}>
+          <div className={styles.blockSlick}>
+            <div className={styles.lineBefore} />
+            <h1>{header}</h1>
+            <div className={styles.line} />
+            <ReactSVG
+              src={arrowSvg}
+              element="span"
+              onClick={this.openClose}
+              svgStyle={{
+                transform: upOrDown,
+                cursor: 'pointer',
+                padding: '8px',
+              }}
+            />
+          </div>
+          <div className={styles.content} style={open ? { display: 'block' } : { display: 'none' }}>
+            {element}
+          </div>
         </div>
       </div>
     );

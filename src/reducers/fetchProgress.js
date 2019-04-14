@@ -1,18 +1,44 @@
+/* eslint-disable no-case-declarations */
+import { FETCH_MODULES, FETCH_MODULES_BLOCKS } from '../actions/types';
+
 const initialState = {
-  themes: 10,
-  themesDone: 9,
+  themes: 1,
+  themesDone: 0,
+  payload: [
+    {
+      themeName: '1',
+      text: '2',
+      milestone: '3',
+      date: '4',
+    },
+  ],
 };
 
+// eslint-disable-next-line func-names
 initialState.progress = function () {
   return Math.floor((initialState.themesDone / initialState.themes) * 100);
 };
 
-export default function fetchProgress(state = initialState) {
-  // fetch('htp://text.js')
-  //   .then((res) => {
-  //     state = res;
-  //     return state;
-  //   });
+export default function fetchProgress(state = initialState, action) {
+  switch (action.type) {
+  case FETCH_MODULES:
+    const { themes, themesDone } = action.payload;
+    console.log('reducer');
+    return {
+      ...state,
+      themes,
+      themesDone,
+      progress() {
+        return Math.floor((themesDone / themes) * 100);
+      },
+    };
 
-  return state;
+  case FETCH_MODULES_BLOCKS:
+    console.log('reducer1');
+    return {
+      ...state,
+      payload: action.payload,
+    };
+  default: return state;
+  }
 }

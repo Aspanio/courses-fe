@@ -1,7 +1,8 @@
 /* eslint-disable no-const-assign */
 import React, { Component } from 'react';
 // import PropTypes from 'prop-types'
-// import { connect } from 'react-redux'
+import { connect } from 'react-redux';
+import { fetchModulesBlocks } from '../../actions/moduleActions';
 import ThemeBlock from '../ThemeBlock';
 import styles from './styles.module.scss';
 
@@ -10,37 +11,21 @@ class ThemesBlock extends Component {
     super(props);
     this.state = {};
   }
-  //   static propTypes = {
-  //     prop: PropTypes
-  //   }
+
+  componentDidMount() {
+    this.props.fetchModulesBlocks();
+  }
 
   render() {
-    const payload = [
-      {
-        themeName: 'Важные темы прошедшего возраста',
-        text: `loremdfksdghladkjgdekjsahg
-          ksdhgalkjhsdalfkjdhflaskdhglkadsghaksdgaksdlghsda;kjghdas;kljghdsa;kjg
-          ashdg;kjasdhg;aksdjghdaslkjghds;lkjasd;ghdsg;hasdrkoasdhfkdjsahfsda;k`,
-        milestone: 'до 3 лет 4 месяца',
-        date: '25.06.2017',
-      },
-      {
-        themeName: 'Важные темы прошедшего возраста',
-        text: `loremdfksdghladkjgdekjsahg
-          ksdhgalkjhsdalfkjdhflaskdhglkadsghaksdgaksdlghsda;kjghdas;kljghdsa;kjg
-          ashdg;kjasdhg;aksdjghdaslkjghds;lkjasd;ghdsg;hasdrkoasdhfkdjsahfsda;k`,
-        milestone: 'до 3 лет 4 месяца',
-        date: '25.06.2017',
-      },
-    ];
+    const { payload } = this.props;
     let index = 0;
     let number;
     const test = payload.map((data) => {
       index += 1;
       if (index < 10) {
-        number = '0' + index;
+        number = `0${index}`;
       } else {
-        number = '' + index;
+        number = `${index}`;
       }
       return <ThemeBlock themeName={data.themeName} text={data.text} milestone={data.milestone} date={data.date} number={number} />;
     });
@@ -53,13 +38,8 @@ class ThemesBlock extends Component {
   }
 }
 
-export default ThemesBlock;
-// const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
+  payload: state.fetchProgress.payload,
+});
 
-// })
-
-// const mapDispatchToProps = {
-
-// }
-
-// export default connect(mapStateToProps, mapDispatchToProps)(index)
+export default connect(mapStateToProps, { fetchModulesBlocks })(ThemesBlock);

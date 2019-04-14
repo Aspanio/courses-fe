@@ -22,9 +22,9 @@ class Checkbox extends Component {
 
   render() {
     const { isClicked } = this.state;
-
+    const { orange } = this.props;
     return (
-      <div className={isClicked ? styles.checkboxClicked : styles.checkbox} onClick={this.handleClick}>
+      <div className={isClicked ? styles.checkboxClicked : styles.checkbox} orange={orange} onClick={this.handleClick}>
         <div className={styles.iconPos}>
           <ReactSVG src={iconSvg} />
         </div>

@@ -1,0 +1,32 @@
+@import '../variables.scss';
+
+.orange {
+    
+    background-color: $dark-orange;
+    padding: 5px 30px;
+    margin: 41px 0 5px;
+    display: flex;
+    align-items: center;
+    border-radius: 3px;
+    p {
+        margin-left: 20px;
+        font-size: 18px;
+        color: #fff;
+        font-family: 'Proxima Nova Light', sans-serif;
+    }
+}
+
+.listItem {
+    background-color: #fff;
+    padding: 25px 30px;
+    margin: 5px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 3px;
+    p {
+        font-size: 16px;
+        color: $black;
+        font-family: 'Proxima Nova Light', sans-serif;
+    }
+}

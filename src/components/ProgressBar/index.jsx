@@ -28,7 +28,7 @@ ProgressBar.defaultProps = {
 
 ProgressBar.propTypes = {
   vert: PropTypes.bool,
-  percentage: PropTypes.number.isRequired,
+  percentage: PropTypes.func.isRequired,
 };
 
 function mapStateToProps(state) {

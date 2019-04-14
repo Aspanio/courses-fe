@@ -11,7 +11,9 @@ export default function Task(props) {
         <h1 className={styles.number}>{number}</h1>
         <p>{text}</p>
       </div>
-      <Checkbox />
+      <div className={styles.checkbox}>
+        <Checkbox />
+      </div>
     </div>
   );
 }

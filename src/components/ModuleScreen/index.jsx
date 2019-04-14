@@ -1,31 +1,38 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { fetchModules } from '../../actions/moduleActions';
 import ProgressBar from '../ProgressBar';
 import styles from './styles.module.scss';
 
-export default class ModuleScreen extends Component {
+class ModuleScreen extends Component {
   constructor(props) {
     super(props);
     this.state = {};
   }
 
+  componentDidMount() {
+    this.props.fetchModules();
+  }
+
   render() {
+    const { themes, themesDone } = this.props;
+
     return (
       <div className={styles.moduleScreenBg}>
         <div className={styles.moduleScreenContainer}>
           <div className={styles.content}>
             <h1 className={styles.moduleName}>1-й год, 3-й месяц</h1>
             <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci eveniet omnis, repellat odio illo
-                ullam quia libero vero deserunt nulla consequuntur! Labore dolor, sapiente incidunt
+              Прохождение этой темы позволит вам избежать частных ошибок при воспитании детей от 0 до 3 лет. Результат - правильные и четкие шаги для достижения цели.
             </p>
             <ProgressBar />
             <div className={styles.themesInfo}>
               <div className={styles.themes}>
-                <h1>10</h1>
+                <h1>{themes}</h1>
                 <p>Тем<br />всего</p>
               </div>
               <div className={styles.themesDone}>
-                <h1>6</h1>
+                <h1>{themesDone}</h1>
                 <p>Тем<br />выполнено</p>
               </div>
             </div>
@@ -36,3 +43,12 @@ export default class ModuleScreen extends Component {
     );
   }
 }
+
+function mapStateToProps(state) {
+  return {
+    themes: state.fetchProgress.themes,
+    themesDone: state.fetchProgress.themesDone,
+  };
+}
+
+export default connect(mapStateToProps, { fetchModules })(ModuleScreen);

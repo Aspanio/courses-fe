@@ -1,22 +1,42 @@
-import React from 'react';
+import React, { Component } from 'react';
+//  import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { fetchModuleTasks } from '../../actions/modulePageActions';
 import Task from '../Task';
-
 import styles from './styles.module.scss';
 
-function Tasks(props) {
-  const { payload } = props;
-  console.log(payload);
-  const tasks = payload.map(el => <Task number={el} text={el[el]} />);
-  return (
-    { tasks }
-  );
+class Tasks extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
+  componentDidMount() {
+    this.props.fetchModuleTasks();
+  }
+
+  render() {
+    const { payload } = this.props;
+    let counter = 0;
+    const data = payload.map((el) => {
+      counter += 1;
+      return <Task number={counter} text={el.text} />;
+    });
+
+    return (
+      <div className={styles.tasks}>
+        {data}
+      </div>
+    );
+  }
 }
 
-function mapStateToProps(state) {
-  return {
-    payload: state.fetchTasks,
-  };
-}
+const mapStateToProps = state => ({
+  payload: state.fetchModules.payload,
+});
 
-export default connect(mapStateToProps)(Tasks);
+// Tasks.propTypes = {
+//   payload: PropTypes.arrayOf.isRequired,
+// };
+
+export default connect(mapStateToProps, { fetchModuleTasks })(Tasks);

@@ -5,11 +5,12 @@
     background-image: url('./kid.png');
     background-size: cover;
     padding: 10px 0;
+    max-height: 512px;
 
     .moduleScreenContainer {
-        max-width: 1126px;
-        margin: 0 auto;
-        max-height: 512px;  
+        max-width: 1172px;
+        padding: 0 18px;
+        margin: 0 auto; 
 
         .content {
             width: 100%;
@@ -18,13 +19,13 @@
 
             h2 {
                 color: #fff;
-                margin-top: 26px;
+                margin-top: 30px;
                 font-size: 24px;
                 font-family: 'Proxima Nova Light', serif;
             }
 
             .moduleName{
-                margin-top: 110px;
+                margin-top: 112px;
                 color: #fff;
                 font-family: 'Intro Bold', sans-serif;
                 background-color: $dark-blue;
@@ -45,7 +46,7 @@
             p {
                 font-family: 'Proxima Nova Light', sans-serif;
                 line-height: 27px;
-                margin-bottom: 74px;
+                margin-bottom: 44px;
             }
 
             .themesInfo {

@@ -1,0 +1,23 @@
+.bg {
+    background-color: #fafafa;
+
+    .container {
+        max-width: 1172px;
+        padding: 0 18px;
+        margin: 0 auto;
+
+        .page {
+            display: grid;
+            grid-template-columns: 4fr 14fr;
+            grid-gap: 10px;
+            align-content: flex-start;
+
+            main {
+                border: 1px solid grey;
+            }
+            aside {
+                border: 1px solid grey;
+            }
+        }
+    }
+}

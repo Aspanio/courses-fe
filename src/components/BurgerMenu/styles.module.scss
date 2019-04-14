@@ -1,0 +1,56 @@
+@import '../variables.scss';
+
+.blockContainer {
+    height: 30px;
+    cursor: pointer;
+    padding: 12px;
+    .line {
+        height: 1px;
+        width: 23px;
+        background-color: $black;
+        margin: 5px 0;
+    }
+    .shortLine {
+        height: 1px;
+        width: 18px;
+        background-color: $black;
+        margin-left: 5px;
+        margin-top: 6px;
+        line-height: 0;
+    }
+}
+
+.burgerActive {
+    background-color: $blue;
+    position: fixed;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    top: -20px;
+    width: 100%;
+    transform: translateX(-100%) scale(1.1);
+    padding-top: 200px;
+    * {
+        font-size: 18px;
+        margin-left: 200px;
+        color: #fff;
+        padding: 5px;
+    }
+    div{
+        
+        position: absolute;
+        top: 70px;
+        right: 30px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        height: 24px;
+        width: 24px;
+        padding: 4px;
+        background-color: #fafafa;
+        border-radius: 50%;
+        color: $black;
+        justify-content: center;
+    }
+}

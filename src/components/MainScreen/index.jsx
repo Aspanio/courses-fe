@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { fetchModules } from '../../actions/moduleActions';
 import Button from '../Button';
 import ProgressBar from '../ProgressBar';
 import karpachoff from './karpachoff.png';
@@ -12,6 +13,10 @@ class MainScreen extends Component {
     super(props);
     this.state = {};
   }
+
+  componentDidMount() {
+    this.props.fetchModules();
+  };
 
   render() {
     const { themesCount, themesDone } = this.props;
@@ -38,7 +43,6 @@ class MainScreen extends Component {
               </div>
             </div>
           </div>
-          <img src={karpachoff} alt="Loading.." />
         </div>
       </div>
     );
@@ -57,4 +61,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(MainScreen);
+export default connect(mapStateToProps, { fetchModules })(MainScreen);

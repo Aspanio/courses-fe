@@ -16,6 +16,7 @@
     border-radius: 3px;
     cursor: pointer;
     background-color: $blue;
+    &[orange='1'] { background-color: $dark-orange; }
 
     .iconPos {
         position: absolute;

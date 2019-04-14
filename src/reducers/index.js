@@ -1,10 +1,18 @@
 import { combineReducers } from 'redux';
 import fetchProgress from './fetchProgress';
-import fetchTasks from './fetchTasks';
+import fetchModules from './fetchModules';
+import fetchTodos from './fetchTodos';
+import fetchListItems from './fetchListItems';
+import fetchDangers from './fetchDangers';
+import fetchRecommendations from './fetchRecommendations';
 
 const rootReducer = combineReducers({
   fetchProgress,
-  fetchTasks,
+  fetchModules,
+  fetchTodos,
+  fetchListItems,
+  fetchDangers,
+  fetchRecommendations,
 });
 
 export default rootReducer;

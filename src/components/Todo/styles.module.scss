@@ -1,0 +1,132 @@
+@import '../variables.scss';
+
+.todoContainer {
+    background-color: #fff;
+    margin: 5px 0;
+    min-height: 186px;
+    &[active='1'] {
+        border: 2px solid $orange; order: 0;
+        .number{
+            color: #fff;
+            background-color: $orange;
+        }
+    }
+    border-radius: 3px;
+    transition: all .4s;
+    &[active='0'] {
+        border: 2px solid #fafafa; order: 1;
+
+        .number{
+            color: $black;
+            background-color: #fafafa;
+        }
+    }
+
+    .number{
+        
+        font-size: 16px;
+        margin-top: -1px;
+        margin-left: -1px;
+        width: 30px;
+        padding: 6px 0;
+        text-align: center;
+        border-radius: 3px;
+        
+    }
+    .block {
+        display: flex;
+        flex-direction: row;
+        padding: 0 29px;
+        align-items: center;
+
+
+        .icon {
+            min-width: 120px;
+            display: flex; 
+            justify-content: center;
+        }
+
+        .content {
+
+         
+            max-width: 880px;
+            width: 100%;
+            display: flex;
+            flex-grow: 6;
+            flex-direction: column;
+            margin: 0 30px;
+            margin-top: -20px;
+
+            span{
+                color: $blue;
+                font-size: 16px;
+                font-family: 'Proxima Nova Light', sans-serif;
+                margin-right: 20px;
+            }
+
+            .infoBar {
+                display: flex;
+                flex-direction: row;
+                align-items: baseline;
+                .svgAndText {
+                    display: flex;
+                    flex-direction: row;
+                    margin-right: 20px;
+                    align-items: center;
+
+                    p {
+                        margin-left: 8px;
+                        font-family: 'Proxima Nova Light',sans-serif;
+                        font-weight: 500;
+                        color: $grey;
+                        font-size: 16px;
+                    }
+                }
+            }
+            .text {
+                font-size: 24px;
+                margin-top: 0;
+                font-family: 'Proxima Nova Light', sans-serif;
+                color: $black;
+                font-weight: bold;
+                margin-bottom: 5px;
+            }
+           .buttons {
+               display: flex;
+               font-display: row;
+
+               .svgAndText {
+                    cursor: pointer;
+                    display: flex;
+                    flex-direction: row;
+                    margin-right: 20px;
+                    align-items: center;
+                    &:hover{
+                        p {
+                            color: $black;
+                        }
+                    }
+
+                    p{
+                        margin-left: 8px;
+                        margin-left: 8px;
+                        font-family: 'Proxima Nova Light',sans-serif;
+                        font-weight: 500;
+                        color: #696969;
+                        font-size: 16px;
+                        
+
+                        &:hover{
+                            color: $black;
+                        }
+                    }
+               }
+           } 
+        }
+    }
+    .switch {
+        flex-grow: 1;
+        margin-top: -20px;
+        margin-right: 23px;
+    }
+}
