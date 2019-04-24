@@ -1,10 +1,15 @@
+@import '../../components/variables.scss';
 .bg {
     background-color: #fafafa;
 
     .container {
         max-width: 1172px;
-        padding: 0 18px;
+        padding: 10px 18px;
         margin: 0 auto;
+
+        @media screen and (max-width: 350px) {
+            padding: 4px 18px;
+        }
 
         .page {
             display: grid;
@@ -12,11 +17,129 @@
             grid-gap: 10px;
             align-content: flex-start;
 
+            @media screen and (max-width: 750px) {
+                display: flex;
+                grid-gap: 0;
+                grid-template-columns: none;
+                flex-direction: column;
+
+                aside {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    border-bottom: 2px solid $grey;
+                    
+                    nav {
+                        display: flex;
+                        flex-direction: column;
+                    }
+                }
+            }
+
             main {
-                border: 1px solid grey;
+                border-left: 2px solid $grey;
+                padding: 30px;
+
+                @media screen and (max-width: 750px) {
+                    border-left: 0;
+                }
+                .line {
+ 
+                    
+                    padding: 10px;
+                    border: 1px solid #000;
+                }
+                .user {
+                    @media screen and (max-width: 750px) {
+                        flex-direction: column;
+                    }
+                    margin-bottom: 10px;
+                    border-bottom: 1px solid $grey;
+                    padding-bottom: 30px;
+                    img {
+                        display: block;
+                        max-width: 300px;
+                        height: 100%;
+                        width: 100%;
+                        border-radius: 50%;
+                        border: 1px solid $grey;
+                    }
+                    display: flex;
+                    flex-direction: row;
+                    .userDesc {
+                        margin-left: 30px;
+                        span {
+                            margin-left: 10px;
+                        }
+                    }
+                }
+                .child {
+                    img {
+                        width: 100px;
+                        height: 100px;
+                        border-radius: 50%;
+                        border: 1px solid $grey;
+                    }
+                }
+                form {
+                    display: flex;
+                    flex-direction: column;
+                    input {
+                        height: 28px;
+                        padding: 2px 5px;
+                        border-radius: 15px;
+                        max-width: 270px;
+                        margin: 5px;
+                    }
+                    input[type='file'] {
+                        opacity: .7;
+                    }
+                    input[type='date'] {
+                        max-width: 150px;
+                        padding: 2px 5px;
+                    }
+                    button {
+                        max-width: 170px;
+                        margin-top: 7px;
+                        border-radius: 15px;
+                        border: blue;
+                        background-color: $blue;
+                        padding: 4px;
+                        color: #fff;
+                    }
+                    select {
+                        width: 270px;
+                        height: 28px;
+                        border-radius: 15px;
+                        padding: 2px;
+                    }
+                }
             }
             aside {
-                border: 1px solid grey;
+                padding: 30px;
+                @media screen and (max-width: 350px) {
+                    padding: 30px 10px;
+                }
+                img {
+                    width: 150px;
+                    height: 150px;
+                    border-radius: 50%;
+                    border: 1px solid $grey;
+                }
+                h1 {
+                    font-size: 24px;
+                }
+                p {
+                    cursor: pointer;
+                    display: inline-block;
+                    padding: 5px;
+                    margin: 10px 10px;
+                    transition: all .3s;
+                    &:hover {
+                        color: $grey;
+                        margin-left: 15px;
+                    }
+                }
             }
         }
     }

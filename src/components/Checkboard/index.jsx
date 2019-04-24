@@ -8,14 +8,14 @@ function Checkboard(props) {
 
   const mapList = lists.map((el) => {
     const { list } = el;
-    const tasks = list.map(element => <ListItem text={element.text} />);
-    return <div><h1 className={styles.header}>{el.header}</h1>{tasks}</div>;
+    const tasks = list.map(element => <ListItem key={Math.floor((Math.random() * 10000) + 2)} text={element.text} />);
+    return <div key={Math.floor((Math.random() * 10000) + 1)}><h1 className={styles.header}>{el.header}</h1>{tasks}</div>;
   });
 
   const mapDangers = dangers.map((el) => {
     const { list } = el;
-    const tasks = list.map(element => <ListItem text={element.text}  orange="1"/>);
-    return <div className={styles.danger}><ListItem text={el.danger} danger /><h1 className={styles.header} danger="1">{el.header}</h1>{tasks}</div>;
+    const tasks = list.map(element => <ListItem key={Math.floor((Math.random() * 10000) + 3)} text={element.text} orange="1" />);
+    return <div className={styles.danger} key={Math.floor((Math.random() * 10000) + 4)}><ListItem text={el.danger} danger /><h1 className={styles.header} danger="1">{el.header}</h1>{tasks}</div>;
   });
 
   return (

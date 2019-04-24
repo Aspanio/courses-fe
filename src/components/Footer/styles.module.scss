@@ -12,6 +12,12 @@ footer {
         grid-template-columns: 1fr 1fr 1fr 1fr;
         //justify-content: space-between;
 
+        @media screen and (max-width: 600px){
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+        }
+
         .line {
             height: 3px;
             width: 38px;

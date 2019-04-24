@@ -30,9 +30,8 @@ class ThemeBlock extends Component {
     };
 
     return (
-      <Link to='/module' style={linkStyle}>
-      <div className={styles.block}>
-        
+      <Link to="/module" style={linkStyle}>
+        <div className={styles.block}>
           <h1 className={styles.number}>{number}</h1>
           <div className={styles.content}>
             <h1>{themeName}</h1>
@@ -44,9 +43,8 @@ class ThemeBlock extends Component {
             <h6>{percentage}</h6>
             <ProgressBar vert />
           </div>
-      
-      </div>
-        </Link>
+        </div>
+      </Link>
     );
   }
 }
@@ -63,7 +61,7 @@ ThemeBlock.propTypes = {
   text: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
   number: PropTypes.string.isRequired,
-  percent: PropTypes.number.isRequired,
+  percent: PropTypes.func.isRequired,
 };
 
 export default connect(mapStateToProps)(ThemeBlock);

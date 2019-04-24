@@ -7,31 +7,31 @@ class Recommendation extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isOpen: '0',
+      isopen: '0',
     };
 
     this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick() {
-    const { isOpen } = this.state;
-    if (isOpen === '0') {
+    const { isopen } = this.state;
+    if (isopen === '0') {
       this.setState({
-        isOpen: '1',
+        isopen: '1',
       });
     } else {
       this.setState({
-        isOpen: '0',
+        isopen: '0',
       });
     }
   }
 
   render() {
     const { content, icon, header } = this.props;
-    const { isOpen } = this.state;
+    const { isopen } = this.state;
     return (
       <div className={styles.slickContainer}>
-        <div className={styles.slick} isOpen={isOpen}>
+        <div className={styles.slick} isopen={isopen}>
           <span className={styles.icon}>
             <ReactSVG src={icon} element="span" />
           </span>
@@ -40,7 +40,7 @@ class Recommendation extends Component {
             <ReactSVG src={arrowSvg} element="span" />
           </span>
         </div>
-        <div className={styles.content} isOpen={isOpen}>
+        <div className={styles.content} isopen={isopen}>
           {content}
         </div>
       </div>

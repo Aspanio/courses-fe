@@ -32,7 +32,7 @@ class Recommendations extends Component {
         icon = undefined;
         break;
       }
-      return <Recommendation header={el.header} icon={icon} content={el.content} />
+      return <Recommendation header={el.header} key={Math.floor((Math.random() * 10000) + 1)} icon={icon} content={el.content} />
     })
     return (
       <div className={styles.recommendContainer}>

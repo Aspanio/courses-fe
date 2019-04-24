@@ -8,7 +8,7 @@ function Todos(props) {
   let count = 0;
   const mapTodos = todos.map((el) => {
     count += 1;
-    return <Todo time={el.time} number={count} icon={el.icon} practice={el.practice} todoType={el.todoType} text={el.text} />;
+    return <Todo key={count} time={el.time} number={count} icon={el.icon} practice={el.practice} todoType={el.todoType} text={el.text} />;
   });
   return (
     <div className={styles.todoContainer}>

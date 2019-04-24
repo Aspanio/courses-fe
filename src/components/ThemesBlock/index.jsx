@@ -27,7 +27,7 @@ class ThemesBlock extends Component {
       } else {
         number = `${index}`;
       }
-      return <ThemeBlock themeName={data.themeName} text={data.text} milestone={data.milestone} date={data.date} number={number} />;
+      return <ThemeBlock key={Math.floor((Math.random() * 10000) + 1)} themeName={data.themeName} text={data.text} milestone={data.milestone} date={data.date} number={number} />;
     });
 
     return (

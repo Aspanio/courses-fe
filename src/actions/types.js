@@ -5,3 +5,4 @@ export const FETCH_MODULE_PAGE_TASKS = 'FETCH_MODULE_PAGE_TASKS';
 export const GET_TASKS = 'GET_TASKS';
 export const GET_CHECKLIST = 'GET_CHECKLIST';
 export const GET_ATTENTIONS = 'GET_ATTENTIONS';
+export const GET_MODULES = 'GET_MODULES';

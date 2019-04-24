@@ -2,11 +2,11 @@ import { GET_CHECKLIST, GET_ATTENTIONS } from '../actions/types';
 
 const initialState = [
   {
-    header: 'err',
+    header: 'Loading..',
     list: [
       {
-        text: 'err',
-        done: true,
+        text: 'Loading..',
+        done: false,
       },
     ],
   },

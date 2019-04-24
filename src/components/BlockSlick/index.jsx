@@ -9,7 +9,7 @@ export default class BlockSlick extends Component {
     super(props);
     this.state = {
       open: true,
-      upOrDown: 'rotate(0deg);',
+      upOrDown: 'rotate(0deg)',
     };
     this.openClose = this.openClose.bind(this);
   }
@@ -19,11 +19,11 @@ export default class BlockSlick extends Component {
     const invertOpen = !open;
     if (open) {
       this.setState({
-        upOrDown: 'rotate(180deg);',
+        upOrDown: 'rotate(180deg)',
       });
     } else {
       this.setState({
-        upOrDown: 'rotate(0deg);',
+        upOrDown: 'rotate(0deg)',
       });
     }
     this.setState({
@@ -62,6 +62,5 @@ export default class BlockSlick extends Component {
 }
 
 BlockSlick.propTypes = {
-  element: PropTypes.objectOf.isRequired,
   header: PropTypes.string.isRequired,
 };

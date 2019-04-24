@@ -39,8 +39,12 @@
         display: grid;
         grid-template-columns: 0.6fr 0.4fr;
 
-        .content {
+        @media screen and (max-width: 1025px) {
+            grid-template-columns: 0.75fr 0.25fr;
+        }
 
+        .content {
+            
             h1{
                 font-family: 'Intro bold', sans-serif;
                 margin-top: 92px;
@@ -98,7 +102,7 @@
         }
 
         img {
-            transform: translateY(34px);
+            transform: translateX(-x134px);
         }
     }
 }

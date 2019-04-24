@@ -20,7 +20,7 @@ class Tasks extends Component {
     let counter = 0;
     const data = payload.map((el) => {
       counter += 1;
-      return <Task number={counter} text={el.text} />;
+      return <Task key={counter} number={counter} text={el.text} />;
     });
 
     return (

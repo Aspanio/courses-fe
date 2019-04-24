@@ -15,15 +15,12 @@ export const fetchModules = _query => (dispatch) => {
 };
 
 export const fetchAttentions = _query => (dispatch) => {
-  console.log('action');
+  console.log('actionFIRED');
   axios.get('/get/attention')
-    .then((res) => {
-      console.log(res);
-      return dispatch({
-        type: GET_ATTENTIONS,
-        payload: 123,
-      });
-    });
+    .then(res => dispatch({
+      type: GET_ATTENTIONS,
+      payload: res.data,
+    }));
 };
 
 export const fetchModulesBlocks = _query => (dispatch) => {
