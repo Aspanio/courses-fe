@@ -21,6 +21,7 @@ class ThemeBlock extends Component {
       date,
       number,
       percent,
+      id,
     } = this.props;
 
     const percentage = `${percent()}%`;
@@ -29,19 +30,21 @@ class ThemeBlock extends Component {
       textDecoration: 'none',
     };
 
+    const valid = date || 'Доступно';
+
     return (
-      <Link to="/module" style={linkStyle}>
+      <Link to={`/module/${id}`} style={linkStyle}>
         <div className={styles.block}>
           <h1 className={styles.number}>{number}</h1>
           <div className={styles.content}>
             <h1>{themeName}</h1>
             <h3><ReactSVG src={babySVG} wrapper="span" />{milestone}</h3>
             <p>{text}</p>
-            <h2>Будет доступно <span>{date}</span></h2>
+            {valid === date ? <h2>Будет доступно <span>${date}</span></h2> : <h2>Доступно</h2> }
           </div>
           <div className={styles.bar}>
             <h6>{percentage}</h6>
-            <ProgressBar vert />
+            <div className={styles.progressBar}>{window.innerWidth < 550 ? <ProgressBar /> : <ProgressBar vert />}</div>
           </div>
         </div>
       </Link>
@@ -62,6 +65,7 @@ ThemeBlock.propTypes = {
   date: PropTypes.string.isRequired,
   number: PropTypes.string.isRequired,
   percent: PropTypes.func.isRequired,
+  id: PropTypes.string.isRequired,
 };
 
 export default connect(mapStateToProps)(ThemeBlock);

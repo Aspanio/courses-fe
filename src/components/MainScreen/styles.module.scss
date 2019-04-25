@@ -30,6 +30,7 @@
         border-color: rgba(255, 255, 255, 0.07) rgba(255, 255, 255, 0.07);
         transform:rotate(12deg);
         z-index: -1;
+        
     }
 
     .container{
@@ -42,6 +43,9 @@
         @media screen and (max-width: 1025px) {
             grid-template-columns: 0.75fr 0.25fr;
         }
+        @media screen and (max-width: 950px) {
+            grid-template-columns: 1fr;
+        } 
 
         .content {
             
@@ -53,6 +57,9 @@
                 font-size: 38px;
                 line-height: 53px;
                 color: #fff;
+                @media screen and (max-width: 380px) {
+                    font-size: 32px;
+                }
             }
 
             h2{
@@ -78,6 +85,7 @@
                     display: flex;
                     font-display: row;
                     align-items: center;
+                    margin-bottom: 30px;
                 }
                 
                 h1 {
@@ -98,11 +106,10 @@
                 position: absolute;
                 right: 100px;
                 transform: translateY(-88%);
+                @media screen and (max-width: 950px) {
+                    display: none;
+                } 
             }
-        }
-
-        img {
-            transform: translateX(-x134px);
         }
     }
 }

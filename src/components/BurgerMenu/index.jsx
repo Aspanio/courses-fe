@@ -23,9 +23,11 @@ export default class BurgerMenu extends Component {
     const burger = isOpen
       ? (
         <div className={styles.burgerActive}>
-          <Link to="/" onClick={this.handleClick}>Главная</Link>
-          <a href="#1" onClick={this.handleClick}>Материалы для вас</a>
-          <div onClick={this.handleClick}>x</div>
+          <div className={styles.links}>
+            <Link to="/" onClick={this.handleClick}>Главная</Link>
+            <a href="#1" onClick={this.handleClick}>Материалы для вас</a>
+          </div>
+          <div className={styles.close} onClick={this.handleClick}>x</div>
         </div>
       ) : (
         <div className={styles.blockContainer} onClick={this.handleClick}>

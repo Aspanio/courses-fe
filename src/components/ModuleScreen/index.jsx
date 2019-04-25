@@ -22,9 +22,7 @@ class ModuleScreen extends Component {
         <div className={styles.moduleScreenContainer}>
           <div className={styles.content}>
             <h1 className={styles.moduleName}>1-й год, 3-й месяц</h1>
-            <p>
-              Прохождение этой темы позволит вам избежать частных ошибок при воспитании детей от 0 до 3 лет. Результат - правильные и четкие шаги для достижения цели.
-            </p>
+            <p>{this.props.desc}</p>
             <ProgressBar />
             <div className={styles.themesInfo}>
               <div className={styles.themes}>
@@ -36,7 +34,7 @@ class ModuleScreen extends Component {
                 <p>Тем<br />выполнено</p>
               </div>
             </div>
-            <h2>Название актуальной темы</h2>
+            <h2>{this.props.header}</h2>
           </div>
         </div>
       </div>

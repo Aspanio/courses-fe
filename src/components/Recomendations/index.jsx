@@ -1,6 +1,5 @@
 /* eslint-disable semi */
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import styles from './styles.module.scss';
 import Recommendation from '../Recommendation';
 import swimSvg from './icons/swim.svg';
@@ -14,11 +13,11 @@ class Recommendations extends Component {
   }
 
   render() {
-    const { recommendations } = this.props;
+    const { data } = this.props;
 
-    const mapRec = recommendations.map((el) => {
+    const mapRec = data.map((el) => {
       let icon;
-      switch (el.icon) {
+      switch (el.img) {
       case 'swim':
         icon = swimSvg;
         break;
@@ -32,7 +31,7 @@ class Recommendations extends Component {
         icon = undefined;
         break;
       }
-      return <Recommendation header={el.header} key={Math.floor((Math.random() * 10000) + 1)} icon={icon} content={el.content} />
+      return <Recommendation header={el.header} key={el.id} icon={icon} content='Почини!' />
     })
     return (
       <div className={styles.recommendContainer}>
@@ -42,8 +41,4 @@ class Recommendations extends Component {
   }
 }
 
-function mapStateToProps(state) {
-  return { recommendations: state.fetchRecommendations }
-}
-
-export default connect(mapStateToProps)(Recommendations);
+export default Recommendations;

@@ -10,44 +10,61 @@ footer {
         padding: 27px 18px 47px 18px;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
-        //justify-content: space-between;
+        justify-content: space-between;
+        grid-gap: 20px;
 
-        @media screen and (max-width: 600px){
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-evenly;
+        @media screen and (max-width: 960px){
+            grid-template-columns: 1fr 1fr;
+            grid-column-gap: 100px
         }
 
-        .line {
-            height: 3px;
-            width: 38px;
-            background-color: #fff;
-            margin-top: 12px;
-            margin-bottom: 25px;
+        @media screen and (max-width: 550px){
+            grid-template-columns: 1fr;
+            grid-column-gap: 100px
         }
 
-        h1{
-            color: #fff;
-            font-size: 24px;
-            font-family: 'Proxima Nova Light', sans-serif;
-        }
-        a {
-            color: #fff;
-            text-decoration: none;
+        .footerBlock {
 
-            &:hover {
-                padding-left: 2px;
+            .line {
+                height: 3px;
+                width: 38px;
+                background-color: #fff;
+                margin-top: 12px;
+                margin-bottom: 20px;
             }
-        }
-        ul {
-            list-style-type: none;
-        }
+            
+            h1{
+                color: #fff;
+                font-size: 24px;
+                font-family: 'Proxima Nova Light', sans-serif;
+            }
+            a {
+                color: #fff;
+                text-decoration: none;
+    
+                &:hover {
+                    padding-left: 2px;
+                }
+            }
+            ul {
+                list-style-type: none;
+                li{
+                    font-size: 16px;
+                    font-family: 'Proxima Nova Liqht', sans-serif;
+                    margin-left: -40px;
+                    margin-bottom: 13px;
+                    font-weight: bold;
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+            }
 
-        li{
-            font-size: 16px;
-            font-family: 'Proxima Nova Liqht', sans-serif;
-            margin-left: -40px;
-            margin-bottom: 10px;
+            @media screen and (max-width: 550px) {
+                &:nth-child(-n+3) {
+                    display: none;
+                }
+            }
         }
     }
 }

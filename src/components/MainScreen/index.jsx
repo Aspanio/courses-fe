@@ -32,12 +32,10 @@ class MainScreen extends Component {
             <ProgressBar className={styles.bar} />
             <div className={styles.infoProgress}>
               <div className={styles.info}>
-                {/* !!!!!!!!!!!!!!!!!!!!! */}
                 <h1>{themesCount}</h1>
                 <p>Тем <br /> всего</p>
               </div>
               <div className={styles.info}>
-                {/* !!!!!!!!!!!!!!!!!!!!! */}
                 <h1>{themesDone}</h1>
                 <p>Тем <br /> выполнено</p>
               </div>

@@ -2,10 +2,9 @@
 
 .moduleScreenBg {
     background-color: #5EC8E4;
-    background-image: url('./kid.png');
     background-size: cover;
     padding: 10px 0;
-    max-height: 512px;
+    max-height: 532px;
 
     .moduleScreenContainer {
         max-width: 1172px;
@@ -16,6 +15,9 @@
             width: 100%;
             max-width: 487px;
             //padding-top: 112px;
+            &::after {
+                // content: url('./kid.png');
+            }
 
             h2 {
                 color: #fff;
@@ -39,7 +41,7 @@
                     width: 700px;
                     left: -700px;
                     top: 0;
-                    height: 80px;
+                    height: 100%;
                     background-color: $dark-blue;
                 }
             }

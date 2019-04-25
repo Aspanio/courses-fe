@@ -1,6 +1,8 @@
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import React, { Component } from 'react';
 import ReactSVG from 'react-svg';
 import Switch from '../Switch';
+import Modal from '../Modal';
 
 import eyeSvg from './icons/eye.svg';
 import bellSvg from './icons/bell.svg';
@@ -17,9 +19,17 @@ class Todo extends Component {
     super(props);
     this.state = {
       active: 0,
+      isOpen: false,
     };
 
     this.handleClick = this.handleClick.bind(this);
+    this.handleView = this.handleView.bind(this);
+  }
+
+  handleView() {
+    this.setState({
+      isOpen: !this.state.isOpen
+    });
   }
 
   handleClick() {
@@ -37,10 +47,10 @@ class Todo extends Component {
 
   render() {
     const {
-      number, icon, practice, todoType, time, text,
+      number, icon, practice, todoType, time, text, content,
     } = this.props;
 
-    const { active } = this.state;
+    const { active, isOpen } = this.state;
     let iconSvg;
 
     if (icon === 'sun') {
@@ -74,7 +84,7 @@ class Todo extends Component {
             <div className={styles.buttons}>
               <div className={styles.svgAndText}>
                 <ReactSVG src={eyeSvg} element="span" />
-                <p>Просмотреть</p>
+                <p className={styles.orange} onClick={this.handleView}>Просмотреть</p>
               </div>
               <div className={styles.svgAndText}>
                 <ReactSVG src={bellSvg} element="span" />
@@ -86,6 +96,12 @@ class Todo extends Component {
             <Switch active={active} />
           </div>
         </div>
+        <Modal
+          show={isOpen}
+          onClose={this.handleView}
+        >
+          {content}
+        </Modal>
       </div>
     );
   }

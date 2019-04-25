@@ -6,6 +6,7 @@ import fetchListItems from './fetchListItems';
 import fetchDangers from './fetchDangers';
 import fetchRecommendations from './fetchRecommendations';
 import courseReducer from './courseReducer';
+import moduleReducer from './moduleReducer';
 
 const rootReducer = combineReducers({
   fetchProgress,
@@ -15,6 +16,7 @@ const rootReducer = combineReducers({
   fetchDangers,
   fetchRecommendations,
   courseReducer,
+  moduleReducer,
 });
 
 export default rootReducer;

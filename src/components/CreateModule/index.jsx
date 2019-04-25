@@ -21,7 +21,6 @@ class CreateModule extends Component {
 
   render() {
     const { payload, checklist, block } = this.props;
-    const { loaded } = this.state;
     console.log(payload);
     let checklistOptions = null;
     let attentionOptions = null;

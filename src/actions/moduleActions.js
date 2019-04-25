@@ -2,7 +2,7 @@
 /* eslint-disable import/prefer-default-export */
 import axios from 'axios';
 import {
-  FETCH_MODULES, FETCH_MODULES_BLOCKS, GET_CHECKLIST, GET_ATTENTIONS,
+  FETCH_MODULES, FETCH_MODULES_BLOCKS, GET_CHECKLIST, GET_ATTENTIONS, SUCSESS_MODULE,
 } from './types';
 
 export const fetchModules = _query => (dispatch) => {
@@ -42,6 +42,18 @@ export const fetchListItems = _query => (dispatch) => {
       console.log(res.data);
       dispatch({
         type: GET_CHECKLIST,
+        payload: res.data,
+      });
+    });
+};
+
+export const getModule = _query => (dispatch) => {
+  console.log('action1111');
+  axios.get(`/get/module/${_query}`)
+    .then((res) => {
+      console.log(res.data);
+      dispatch({
+        type: SUCSESS_MODULE,
         payload: res.data,
       });
     });

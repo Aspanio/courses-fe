@@ -19,7 +19,7 @@ export default function () {
       <BrowserRouter>
         <div>
           <HeaderNav />
-          <Route path="/module" exact component={ModulePage} />
+          <Route path="/module/:id" exact component={ModulePage} />
           <Route path="/" exact component={MainPage} />
           <Route path="/login" exact component={Login} />
           <Route path="/user" exact component={User} />

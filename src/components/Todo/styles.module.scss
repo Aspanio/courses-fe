@@ -4,6 +4,9 @@
     background-color: #fff;
     margin: 5px 0;
     min-height: 186px;
+    border-radius: 3px;
+    transition: all .4s;
+    position: relative;
     &[active='1'] {
         border: 2px solid $orange; order: 0;
         .number{
@@ -11,11 +14,8 @@
             background-color: $orange;
         }
     }
-    border-radius: 3px;
-    transition: all .4s;
     &[active='0'] {
         border: 2px solid #fafafa; order: 1;
-
         .number{
             color: $black;
             background-color: #fafafa;
@@ -23,14 +23,26 @@
     }
 
     .number{
-        
         font-size: 16px;
         margin-top: -1px;
         margin-left: -1px;
         width: 30px;
         padding: 6px 0;
+        font-weight: bold;
         text-align: center;
         border-radius: 3px;
+        @media screen and (max-width: 550px) {
+            position: absolute;
+            left: 17px;
+            display: flex;
+            top: 30px;
+            padding: 5px;
+            width: 30px;
+            height: 30px;
+            padding: 10px;
+            align-items: center;
+            justify-content: center;
+        }
         
     }
     .block {
@@ -39,16 +51,25 @@
         padding: 0 29px;
         align-items: center;
 
+        @media screen and (max-width: 550px) {
+            padding: 0 0 0 5px;
+        }
 
         .icon {
             min-width: 120px;
             display: flex; 
             justify-content: center;
+            @media screen and (max-width: 550px) {
+                position: absolute;
+                left: 60px;
+                top: 20px;
+                height: 45px;
+                width: 45px;
+            }
+
         }
 
         .content {
-
-         
             max-width: 880px;
             width: 100%;
             display: flex;
@@ -56,6 +77,12 @@
             flex-direction: column;
             margin: 0 30px;
             margin-top: -20px;
+
+            @media screen and (max-width: 550px) {
+                margin-top: 100px;
+                flex-grow: 1;
+                margin: 100px 10px 0;
+            }
 
             span{
                 color: $blue;
@@ -90,6 +117,10 @@
                 color: $black;
                 font-weight: bold;
                 margin-bottom: 5px;
+                word-wrap: wrap;
+                @media screen and (max-width: 400px) {
+                    font-size: 18px;
+                }
             }
            .buttons {
                display: flex;
@@ -111,7 +142,7 @@
                         margin-left: 8px;
                         margin-left: 8px;
                         font-family: 'Proxima Nova Light',sans-serif;
-                        font-weight: 500;
+                        font-weight: bold;
                         color: #696969;
                         font-size: 16px;
                         
@@ -120,13 +151,35 @@
                             color: $black;
                         }
                     }
+                    .orange {
+                        color: $orange;
+                    }
+                    @media screen and (max-width: 550px) {
+                        border: 1px solid #dfdada;
+                        width: 50%;
+                        border-radius: 3px;
+                        margin-bottom: 20px;
+                        justify-content: center;
+                        background-color: #fafafa;
+                        margin-top: 16px;
+                    }
+                    @media screen and (max-width: 350px) {
+                        margin-right: 10px;
+                        p{
+                            font-size: 14px;
+                        };
+                    }
                }
            } 
         }
     }
     .switch {
-        flex-grow: 1;
         margin-top: -20px;
         margin-right: 23px;
+        @media screen and (max-width: 550px) {
+            position: absolute;
+            right: 5px;
+            top: 60px;
+        }
     }
 }

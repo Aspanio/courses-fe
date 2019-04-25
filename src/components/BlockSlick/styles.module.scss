@@ -24,6 +24,11 @@
                 font-family: 'Proxima Nova Light', sans-serif;
                 font-size: 32px;
                 white-space: nowrap;
+
+                @media screen and (max-width: 550px){
+                    white-space: normal;
+                    font-size: 26px;
+                }
     
             }
     

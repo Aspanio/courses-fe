@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 // import PropTypes from 'prop-types'
 import { connect } from 'react-redux';
-import { fetchModulesBlocks } from '../../actions/moduleActions';
+import { getModules } from '../../actions/courseAction';
 import ThemeBlock from '../ThemeBlock';
 import styles from './styles.module.scss';
 
@@ -13,21 +13,24 @@ class ThemesBlock extends Component {
   }
 
   componentDidMount() {
-    this.props.fetchModulesBlocks();
+    const { getListModules } = this.props;
+    getListModules();
   }
 
   render() {
     const { payload } = this.props;
+    console.log(payload);
     let index = 0;
     let number;
     const test = payload.map((data) => {
+      console.log(data)
       index += 1;
       if (index < 10) {
         number = `0${index}`;
       } else {
         number = `${index}`;
       }
-      return <ThemeBlock key={Math.floor((Math.random() * 10000) + 1)} themeName={data.themeName} text={data.text} milestone={data.milestone} date={data.date} number={number} />;
+      return <ThemeBlock key={data._id} themeName={data.name} text={data.shortDesc.desc} milestone={`от ${data.shortDesc.years} л. ${data.shortDesc.months} м.`} date={data.date ? data.date : null} number={number} id={data._id} />;
     });
 
     return (
@@ -39,7 +42,11 @@ class ThemesBlock extends Component {
 }
 
 const mapStateToProps = state => ({
-  payload: state.fetchProgress.payload,
+  payload: state.courseReducer.payload,
 });
 
-export default connect(mapStateToProps, { fetchModulesBlocks })(ThemesBlock);
+const mapDispatchToProps = dispatch => ({
+  getListModules: () => dispatch(getModules()),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(ThemesBlock);

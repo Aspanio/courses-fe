@@ -28,8 +28,6 @@ class FilterBar extends Component {
           <ReactDropdown
             controlClassName={styles.dropDown}
             menuClassName={styles.menu}
-            // arrowClosed={<span className={styles.arrowClosed} />}
-            // arrowOpen={<span className={styles.arrowUp} />}
             options={options}
             value={defaultOption}
           />

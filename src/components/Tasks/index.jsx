@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 //  import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { fetchModuleTasks } from '../../actions/modulePageActions';
 import Task from '../Task';
 import styles from './styles.module.scss';
 
@@ -11,16 +9,12 @@ class Tasks extends Component {
     this.state = {};
   }
 
-  componentDidMount() {
-    this.props.fetchModuleTasks();
-  }
-
   render() {
-    const { payload } = this.props;
+    const { text } = this.props;
     let counter = 0;
-    const data = payload.map((el) => {
+    const data = text.map((el) => {
       counter += 1;
-      return <Task key={counter} number={counter} text={el.text} />;
+      return <Task key={counter} number={counter} text={el} />;
     });
 
     return (
@@ -31,12 +25,4 @@ class Tasks extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  payload: state.fetchModules.payload,
-});
-
-// Tasks.propTypes = {
-//   payload: PropTypes.arrayOf.isRequired,
-// };
-
-export default connect(mapStateToProps, { fetchModuleTasks })(Tasks);
+export default Tasks;

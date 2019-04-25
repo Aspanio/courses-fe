@@ -21,18 +21,6 @@ initialState.progress = function () {
 
 export default function fetchProgress(state = initialState, action) {
   switch (action.type) {
-  case FETCH_MODULES:
-    const { themes, themesDone } = action.payload;
-    console.log('reducer');
-    return {
-      ...state,
-      themes,
-      themesDone,
-      progress() {
-        return Math.floor((themesDone / themes) * 100);
-      },
-    };
-
   case FETCH_MODULES_BLOCKS:
     console.log('reducer1');
     return {

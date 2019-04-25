@@ -38,3 +38,5 @@
 [0310/184531.627:WARNING:thread_snapshot_minidump.cc(88)] Snapshot X86 context support has no unit tests.
 [0310/184531.628:WARNING:thread_snapshot_minidump.cc(88)] Snapshot X86 context support has no unit tests.
 [0310/184531.628:WARNING:minidump_to_upload_parameters.cc(67)] duplicate annotation name metrics_client_id, discarding value 14c9aa0b712847a6900c771d82be5837
+[0425/210144.486:ERROR:process_info.cc(359)] UncheckedAllocate
+[0425/210145.211:ERROR:process_info.cc(359)] UncheckedAllocate
