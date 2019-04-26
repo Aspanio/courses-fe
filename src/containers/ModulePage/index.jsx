@@ -8,7 +8,7 @@ import Tasks from '../../components/Tasks';
 import Todos from '../../components/Todos';
 import Checkboard from '../../components/Checkboard';
 import Recommendations from '../../components/Recomendations';
-import QuestionSlick from '../../components/QuestionSlick';
+import Comments from '../../components/Comments';
 import styles from './styles.module.scss';
 
 class ModulePage extends Component {
@@ -40,7 +40,7 @@ class ModulePage extends Component {
         <BlockSlick header="Дополнительные задания" element={<Todos elements={payload.extra_tasks} />} />
         <BlockSlick header="Что проверить?" style={{ backgroundColor: '#fafafa' }} element={<Checkboard checklist={payload.checklist} dangerlist_header={payload.dangerlist_header} dangerlist={payload.dangerlist} />} />
         <BlockSlick header="Обратить внимание" element={<Recommendations data={payload.attentions} />} />
-        {/* <BlockSlick header="Частые вопросы" element={<Recommendations />} /> */}
+        <BlockSlick header="Частые вопросы" element={<Comments />} />
       </div>
     );
   }
