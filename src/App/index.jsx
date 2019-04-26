@@ -10,6 +10,7 @@ import Footer from '../components/Footer';
 import Login from '../containers/Login';
 import User from '../containers/UserPage';
 import Admin from '../containers/Admin';
+import Home from '../containers/home';
 
 // const history = createBrowserHistory();
 
@@ -20,7 +21,8 @@ export default function () {
         <div>
           <HeaderNav />
           <Route path="/module/:id" exact component={ModulePage} />
-          <Route path="/" exact component={MainPage} />
+          <Route path="/" exact component={Home} />
+          <Route path="/course/:id" exact component={MainPage} />
           <Route path="/login" exact component={Login} />
           <Route path="/user" exact component={User} />
           <Route path="/admin" exact component={Admin} />

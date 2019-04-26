@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import { fetchModules } from '../../actions/moduleActions';
 import Button from '../Button';
 import ProgressBar from '../ProgressBar';
-import karpachoff from './karpachoff.png';
 import styles from './styles.module.scss';
 
 
@@ -15,7 +14,7 @@ class MainScreen extends Component {
   }
 
   componentDidMount() {
-    this.props.fetchModules();
+    this.props.fetchCourseModules();
   };
 
   render() {
@@ -36,7 +35,7 @@ class MainScreen extends Component {
                 <p>Тем <br /> всего</p>
               </div>
               <div className={styles.info}>
-                <h1>{themesDone}</h1>
+                <h1>{themesDone || '0'}</h1>
                 <p>Тем <br /> выполнено</p>
               </div>
             </div>
@@ -54,9 +53,15 @@ MainScreen.propTypes = {
 
 function mapStateToProps(state) {
   return {
-    themesCount: state.fetchProgress.themes,
-    themesDone: state.fetchProgress.themesDone,
+    themesCount: state.fetchModules.themes,
+    // themesDone: state.fetchModules.themesDone,
   };
 }
 
-export default connect(mapStateToProps, { fetchModules })(MainScreen);
+function mapDispatchToProps(dispatch) {
+  return {
+    fetchCourseModules: () => dispatch(fetchModules()),
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(MainScreen);

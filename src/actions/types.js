@@ -9,3 +9,6 @@ export const GET_MODULES = 'GET_MODULES';
 
 export const GET_MODULE = 'GET_MODULE';
 export const SUCSESS_MODULE = 'SUCSESS_MODULE';
+
+export const GET_COURSES = 'GET_COURSES';
+export const SUCSESS_COURSES = 'SUCSESS_COURSES';

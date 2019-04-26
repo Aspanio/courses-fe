@@ -31,7 +31,7 @@ class Recommendations extends Component {
         icon = undefined;
         break;
       }
-      return <Recommendation header={el.header} key={el.id} icon={icon} content='Почини!' />
+      return <Recommendation header={el.header} key={el.id} icon={icon} content={el.content} />
     })
     return (
       <div className={styles.recommendContainer}>

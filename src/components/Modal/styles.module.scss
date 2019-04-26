@@ -1,3 +1,4 @@
+@import '../variables.scss';
 .backdrop {
     position: fixed;
     top: 0;
@@ -14,7 +15,12 @@
         min-height: 300px;
         margin: 0 auto;
         padding: 30px;
+
+        .button {
+            border-radius: 5px;
+            border: none;
+            color: #fff;
+            background-color: $blue;
+        }
       }
   }
-
-  // The modal "window"

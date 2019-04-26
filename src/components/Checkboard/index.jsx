@@ -12,12 +12,12 @@ function Checkboard(props) {
   });
 
   const mapDangers = dangerlist.map((el) => {
-    const tasks = el.text.map(element => <ListItem key={Math.floor((Math.random() * 10000) + 2)} text={element} />);
+    const tasks = el.text.map(element => <ListItem key={Math.floor((Math.random() * 10000) + 2)} text={element} orange />);
     return <div key={Math.floor((Math.random() * 10000) + 4)}><h1 className={styles.header} danger="1">{el.header}</h1>{tasks}</div>;
   });
 
   return (
-    <div>
+    <div className={styles.checkBoard}>
       <div>{mapList}</div>
       <ListItem text={dangerlist_header} danger />
       <div>{mapDangers}</div>

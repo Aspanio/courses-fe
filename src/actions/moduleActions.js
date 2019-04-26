@@ -11,6 +11,7 @@ export const fetchModules = _query => (dispatch) => {
     .then(res => dispatch({
       type: FETCH_MODULES,
       payload: res.data,
+      themesCount: res.data.length,
     }));
 };
 

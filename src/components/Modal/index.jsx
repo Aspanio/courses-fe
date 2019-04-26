@@ -19,7 +19,7 @@ class Modal extends React.Component {
         <div className={styles.modal}>
           {renderHTML(this.props.children)}
           <div>
-            <button type="button" onClick={this.props.onClose}>Закрыть</button>
+            <button className={styles.button} type="button" onClick={this.props.onClose}>Закрыть</button>
           </div>
         </div>
       </div>

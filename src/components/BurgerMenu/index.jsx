@@ -26,6 +26,7 @@ export default class BurgerMenu extends Component {
           <div className={styles.links}>
             <Link to="/" onClick={this.handleClick}>Главная</Link>
             <a href="#1" onClick={this.handleClick}>Материалы для вас</a>
+            <Link to="/login" onClick={this.handleClick}>Войти</Link>
           </div>
           <div className={styles.close} onClick={this.handleClick}>x</div>
         </div>

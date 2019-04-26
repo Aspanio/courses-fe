@@ -6,6 +6,7 @@ import CreateChecklist from '../../components/CreateChecklist';
 import CreateDangerChecklist from '../../components/CreateDangerChecklist';
 import CreateAttentionBlock from '../../components/CreateAttentionBlock';
 import CreateCourse from '../../components/CreateCourse';
+import DeleteComponent from '../../components/DeleteComonent';
 import styles from './styles.module.scss';
 
 class Admin extends Component {
@@ -46,6 +47,9 @@ class Admin extends Component {
     case 'Course':
       active = <CreateCourse />;
       break;
+    case 'Delete':
+      active = <DeleteComponent />;
+      break;
     default:
       active = <CreateModule />;
       break;
@@ -60,6 +64,7 @@ class Admin extends Component {
             <a onClick={() => this.handleClick('Checklist')}>Добавление чеклиста</a>
             <a onClick={() => this.handleClick('Dangerlist')}>Добавление опасного чеклиста</a>
             <a onClick={() => this.handleClick('Attention')}>Добавление блока обратить внимание</a>
+            <a onClick={() => this.handleClick('Delete')}>Удаление курса</a>
           </div>
           <div className={styles.right}>
             {active}
