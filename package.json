@@ -53,5 +53,5 @@
     "eslint-plugin-react": "^7.11.0"
   },
   "homepage": "http://aspanio.github.io/courses_fe",
-  "proxy": "http://localhost:4000"
+  "proxy": "https://karpachoff-server.herokuapp.com"
 }
